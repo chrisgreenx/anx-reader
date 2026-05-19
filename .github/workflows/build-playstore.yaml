@@ -29,7 +29,7 @@ on:
 
 jobs:
   build-playstore:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, silenus]
     timeout-minutes: 60
     env:
       TRACK: internal
