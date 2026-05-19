@@ -27,6 +27,9 @@ on:
       KEY_ALIAS:
         required: true
 
+permissions:
+  contents: read
+
 jobs:
   build-playstore:
     runs-on: ubuntu-latest

@@ -19,6 +19,9 @@ on:
       KEY_ALIAS:
         required: true
 
+permissions:
+  contents: read
+
 jobs:
   build-android:
     runs-on: ubuntu-latest
