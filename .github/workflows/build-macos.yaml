@@ -15,7 +15,7 @@ on:
 
 jobs:
   build-macos:
-    runs-on: [self-hosted, silenus]
+    runs-on: macos-latest
     
     steps:
       - name: Checkout repository
@@ -39,7 +39,7 @@ jobs:
       - name: Build for macOS
         shell: bash
         run: |
-          sudo xcode-select -switch /Applications/Xcode_${{ inputs.xcode_version }}.app/Contents/Developer
+          # Runner default Xcode is used on GitHub-hosted macOS.
           flutter gen-l10n
           dart run build_runner build --delete-conflicting-outputs
           chmod +x ./scripts/macos_nosign.sh

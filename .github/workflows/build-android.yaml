@@ -21,7 +21,7 @@ on:
 
 jobs:
   build-android:
-    runs-on: [self-hosted, silenus]
+    runs-on: ubuntu-latest
     
     steps:
       - name: Checkout repository
