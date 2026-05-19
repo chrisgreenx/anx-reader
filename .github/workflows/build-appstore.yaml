@@ -28,7 +28,7 @@ on:
 
 jobs:
   build-appstore:
-    runs-on: macos-26
+    runs-on: [self-hosted, silenus]
     timeout-minutes: 60
     
     steps:

@@ -32,7 +32,7 @@ permissions:
 jobs:
   upload-artifacts:
     if: inputs.is_alpha == 'true'
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, silenus]
     env:
       BASE_NOTIFICATION_URL: ${{ secrets.NOTIFICATION_URL }}/Anx-Reader%20Action
     steps:
@@ -62,7 +62,7 @@ jobs:
 
   create-release:
     if: inputs.is_alpha != 'true'
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, silenus]
     env:
       BASE_NOTIFICATION_URL: ${{ secrets.NOTIFICATION_URL }}/Anx-Reader%20Action
     steps:
