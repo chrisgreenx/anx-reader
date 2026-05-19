@@ -13,9 +13,12 @@ on:
         required: true
         type: string
 
+permissions:
+  contents: read
+
 jobs:
   build-ios:
-    runs-on: [self-hosted, silenus]
+    runs-on: macos-latest
     
     steps:
       - name: Checkout repository
@@ -34,8 +37,7 @@ jobs:
 
       - name: Build for iOS
         run: |
-          sudo xcode-select -switch /Applications/Xcode_${{ inputs.xcode_version }}.app/Contents/Developer
-          # xcodebuild -downloadPlatform iOS -buildVersion 18.2
+          # Runner default Xcode is used on GitHub-hosted macOS.
           flutter gen-l10n
           dart run build_runner build --delete-conflicting-outputs
           flutter build ios --release --no-codesign

@@ -27,9 +27,12 @@ on:
       KEY_ALIAS:
         required: true
 
+permissions:
+  contents: read
+
 jobs:
   build-playstore:
-    runs-on: [self-hosted, silenus]
+    runs-on: ubuntu-latest
     timeout-minutes: 60
     env:
       TRACK: internal

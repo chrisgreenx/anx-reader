@@ -19,9 +19,12 @@ on:
       KEY_ALIAS:
         required: true
 
+permissions:
+  contents: read
+
 jobs:
   build-android:
-    runs-on: [self-hosted, silenus]
+    runs-on: ubuntu-latest
     
     steps:
       - name: Checkout repository
